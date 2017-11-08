@@ -1,0 +1,20 @@
+{
+  "name": "videojs-dailymotion",
+  "description": "Dailymotion playback technology for Video.js",
+  "version": "2.0.0",
+  "main": [
+    "dist/videojs-dailymotion.js"
+  ],
+  "ignore": [
+    "examples",
+    "sandbox",
+    "test",
+    ".editorconfig",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "bower.json",
+    "package.json",
+    "README.md"
+  ]
+}
