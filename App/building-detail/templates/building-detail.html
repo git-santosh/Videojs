@@ -1,0 +1,75 @@
+<div class="homepage-10 real-estate-two">
+  <section class="property-details">
+    <div class="container">
+      <div class="head">
+        <h1> Property Details </h1>
+        <h3 class="red-text" ng-show="!building.isAvailable">BUILDING NOT AVAILABLE</h3>
+        <strong> {{building.propertyType}} <span> {{building.streetAddress}}, {{building.city}}, {{building.state}} {{building.zipCode}} </span></strong> </div>
+      <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="property-cont-wrap">
+            <div>
+              <img alt="" ng-src={{building.photoURL}} style="width: 750px; float: left; display: block;">
+            </div>
+            <div class="slider-cont clearfix"> <span> Architectural Style : {{building.architecturalStyle}} </span> <strong> For Sale <span> <small> ${{building.price}} </small></span></strong> </div>
+            <div class="property-info-wrap">
+              <div class="property-subpart-wrap">
+                <ul class="property-subpart clearfix">
+                  <li> <a href="#"> <strong> Area:</strong> <span> {{building.lotSize}} </span> <i class="area"> </i></a> </li>
+                  <li> <a href="#"> <strong> Stories:</strong> <span> {{building.stories}} </span> <i class="bedroom"> </i></a> </li>
+                  <li> <a href="#"> <strong> Units in Building:</strong> <span> {{building.numberOfUnits}} </span> <i class="bathroom"> </i></a> </li>
+                  <li> <a href="#"> <strong> Building Age:</strong> <span> {{building.buildingAge}} </span> <i class="garage"> </i></a> </li>
+                </ul>
+                <div class="print"> <a href="#" class="print-icon"> Print </a> </div>
+              </div>
+              <div class="property-description">
+              <h5>Building Description:</h5> {{building.description}}
+              </div>
+              <ul class="cont-info">
+                <li> <strong>Street Address: </strong><span>{{building.streetAddress}}</span> </li>
+                <li> <strong>City: </strong><span>{{building.city}}</span> </li>
+                <li> <strong>State and ZIP Code:</strong><span>{{building.state}}, {{building.zipCode}}</span> </li>
+                <li> <strong>Price: </strong><span>${{building.price}}</span> </li>
+                <li> <strong>Property Type: </strong><span>{{building.propertyType}}</span> </li>
+                <li> <strong>Lot Size: </strong><span>{{building.lotSize}}</span> </li>
+                <li> <strong>Stories: </strong><span>{{building.stories}}</span> </li>
+                <li> <strong>Number of Units in Building: </strong><span>{{building.numberOfUnits}} </span> </li>
+                <li> <strong>Architectural Style: </strong><span>{{building.architecturalStyle}}</span> </li>
+                <li> <strong>Building Age: </strong><span>{{building.buildingAge}}</span> </li>
+              </ul>
+            </div>
+
+
+            <section class="map">
+              <h2> Property Map </h2>
+              <div class="map-wrap">
+                <google-map id="custom-map-two"></google-map>
+              </div>
+            </section>
+
+
+            <div>
+              <a class="btn btn-default btn-effect" ui-sref="building.reviews" id="reviews-button">Click to see reviews</a>
+              <button class="btn btn-default btn-effect" id="reviews-button" ui-sref="building.write" ng-disabled="loggedIn">Write a review<i class="fa fa-pencil"></i></button>
+              <span ng-show="loggedIn">Please sign in to leave a review</span>
+
+              <ui-view></ui-view>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-md-offset-1">
+          <div ng-show="building.isAvailable" ng-click="addToCart()">
+            <div>
+              <br><br>
+              <button class="btn btn-default btn-effect addToCartButton"><h2 class="text-center">Add to Cart
+              <alert type="danger" class="position-fixed" ng-show="error">{{ error }}</alert><i class="fa fa-shopping-cart"></i></h2></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
